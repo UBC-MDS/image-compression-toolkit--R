@@ -1,12 +1,15 @@
 Package: imageCompressR
-Title: What the Package Does (One Line, Title Case)
+Title: It compresses images
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "First",
            family = "Last",
            role = c("aut", "cre"),
            email = "first.last@example.com")
-Description: What the package does (one paragraph).
-License: What license it uses
+Description: It compresses image shape by cropping ,seam carving and reducing memory size .
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+Suggests: 
+    testthat
+RoxygenNote: 6.1.1
