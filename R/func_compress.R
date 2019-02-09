@@ -1,5 +1,8 @@
-#' Title Compress images by memory size .
-#'
+#' Compress images
+#' 
+#' Compress the size an image by reducing the number of bits
+#' used to represent each pixel to b
+#' 
 #' @param img array
 #' @param b integer
 #'
