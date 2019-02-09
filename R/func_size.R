@@ -1,4 +1,6 @@
-#' Title Calculates the memory size of image
+#' Get image size
+#'
+#' Calculate the size of an image
 #'
 #' @param img array
 #'
