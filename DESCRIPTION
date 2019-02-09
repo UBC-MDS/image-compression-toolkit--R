@@ -6,7 +6,7 @@ Authors@R:
            family = "Last",
            role = c("aut", "cre"),
            email = "first.last@example.com")
-Description: It compresses image shape by cropping ,seam carving and reducing memory size .
+Description: It compresses image shape by cropping and reducing memory size .
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
