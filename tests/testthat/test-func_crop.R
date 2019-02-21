@@ -1,15 +1,22 @@
-library(testthat)
 context("crop")
+library(testthat)
+library(OpenImageR)
+
+
+test_images = c("data/test_image_1717.png", "data/test_image_1718.png", "data/test_image_1816.png", "data/test_image_1819.png")
+image = "data/test_image_1819.png"
 
 # tests for the crop() function
 
 test_that("function returns the correct output shape", {
-  expect_equal(dim(crop(image, 15, 10)), c(15, 10, 3))
-  expect_equal(dim(crop(image, 10, 5)), c(10, 5, 3))
-  expect_equal(dim(crop(image, 6, 6)), c(6, 6, 3))
-  expect_equal(dim(crop(image, 5, 5)), c(5, 5, 3))
-  expect_equal(dim(crop(image, 1, 1)), c(1, 1, 3))
-  expect_equal(dim(crop(image, dim(image)[1], dim(image)[2])), dim(image))
+  expect_equal(dim(readImage(crop(image, as.integer(15), as.integer(10)))), c(15, 10, 4))
+  expect_equal(dim(readImage(crop(image, as.integer(10), as.integer(5)))), c(10, 5, 4))
+  expect_equal(dim(readImage(crop(image, as.integer(6), as.integer(6)))), c(6, 6, 4))
+  expect_equal(dim(readImage(crop(image, as.integer(5), as.integer(5)))), c(5, 5, 4))
+  expect_equal(dim(readImage(crop(image, as.integer(1), as.integer(1)))), c(1, 1, 4))
+  
+  img=crop(image, dim(readImage(image))[1], dim(readImage(image))[2])
+  expect_equal(dim(readImage(img)), dim(readImage(image)))
 })
 
 test_that("function raises value error when invalid values passed in for height and width", {
@@ -35,6 +42,6 @@ test_that("function raises type error when invalid types are passed in", {
 })
 
 test_that("input array is correct shape",{
-  expect_equal(length(dim(image)), 3)
+  expect_equal(length(dim(readImage(image))), 3)
 })
 
