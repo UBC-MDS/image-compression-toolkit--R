@@ -13,12 +13,12 @@
 #' @examples
 #' crop("data/sample.png", 10, 15)
 #------------------------------------Library------------------------------------------#
-library(OpenImageR)
 library(numbers)
-library(imager)
+#library(imager)
 library(R.utils)
 library(png)
-library(searchable)
+#library(searchable)
+library(OpenImageR)
 #-------------------------------------------------------------------------------------#
 crop <- function(img_path, H, W){
   
@@ -26,38 +26,39 @@ crop <- function(img_path, H, W){
   # Exception handling for input validation like Type error, invalid values ,         #
   # unrealistic desired dimension                                                     #
   #-----------------------------------------------------------------------------------#
-  if (H <=0 || W <= 0 ){stop("ValueError -- Give positive dimension")
+  if (H <=0 || W <= 0 ){
+    stop("ValueError")
     }
-  else if (H >= dim(readImage(img_path))[1]+1 || W>=dim(readImage(img_path))[2]+1){
-    stop("ValueError -- Desired dimension higher than original")
+  if (H >= dim(readImage(img_path))[1]+1 || W>=dim(readImage(img_path))[2]+1){
+    stop("ValueError")
   }
-  else if (is.integer(H)==FALSE || is.integer(W)==FALSE){
-    stop("TypeError -- Desired dimension should be integer.")
+  if (is.integer(H)==FALSE || is.integer(W)==FALSE){
+    stop("TypeError")
   }
-  else if (assertthat::is.string(img_path)==FALSE){
-    stop("TypeError -- Image path should be a string")
+  if (assertthat::is.string(img_path)==FALSE){
+    stop("TypeError")
   }
   #-----------------------------------------------------------------------------------#
   image = readImage(img_path)
-  height = dim(image)[1] - (H-1)
-  width = dim(image)[2] - (W-1)
+  height = dim(image)[1] - H
+  width = dim(image)[2] - W
   
   if (rem(height,2) == 0){
-    start_row = as.integer(height/2)
-    end_row = as.integer(dim(image)[1]-height/2)
+    start_row = as.integer(height/2) + 1
+    end_row = start_row + H - 1
   }
   else {
-    start_row = as.integer((height-1)/2)
-    end_row = as.integer((dim(image)[1]-(height-1)/2)-1)
+    start_row = as.integer((height-1)/2) + 1
+    end_row = start_row + H - 1
   }
   
   if (rem(width,2) == 0){
-    start_col = as.integer(width/2)
-    end_col = as.integer(dim(image)[2]-width/2)
+    start_col = as.integer(width/2) + 1
+    end_col = start_col + W - 1
   }
   else {
-    start_col = as.integer((width-1)/2)
-    end_col = as.integer((dim(image)[2]-(width-1)/2)-1)
+    start_col = as.integer((width-1)/2) + 1
+    end_col = start_col + W - 1
   }
   
   img = image[start_row:end_row,start_col:end_col,]
@@ -65,7 +66,7 @@ crop <- function(img_path, H, W){
   path<-paste(normalizePath(dirname(img_path)),"\\", "Crop_image.png", sep = "")
   save <-writePNG(img,target=path)
   
-  print("The cropped image path is :")
+  print(paste("The cropped image path is :",path))
   return(path)
   
 }
