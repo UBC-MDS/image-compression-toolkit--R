@@ -2,14 +2,19 @@ Package: imageCompressR
 Title: It compresses images
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Sayanti,Aditya,Alden",
+           family = "Ghosh,Sharma,Chen",
            role = c("aut", "cre"),
            email = "first.last@example.com")
 Description: It compresses image shape by cropping and reducing memory size .
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Suggests: 
-    testthat
 RoxygenNote: 6.1.1
+Imports: 
+    numbers,
+    R.utils,
+    png,
+    OpenImageR,
+    here,
+    testthat

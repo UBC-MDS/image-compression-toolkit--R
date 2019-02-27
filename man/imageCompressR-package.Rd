@@ -6,10 +6,10 @@
 \alias{imageCompressR-package}
 \title{imageCompressR: It compresses images}
 \description{
-It compresses image shape by cropping ,seam carving and reducing memory size .
+It compresses image shape by cropping and reducing memory size .
 }
 \author{
-\strong{Maintainer}: First Last \email{first.last@example.com}
+\strong{Maintainer}: Sayanti,Aditya,Alden Ghosh,Sharma,Chen \email{first.last@example.com}
 
 }
 \keyword{internal}
