@@ -17,4 +17,5 @@ Imports:
     png,
     OpenImageR,
     here,
-    testthat
+    testthat,
+    reticulate
