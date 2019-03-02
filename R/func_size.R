@@ -9,6 +9,7 @@
 #'
 #' @examples
 #' image_size(img)
-image_size <- function(img) {
 
+image_size <- function(img) {
+    return(file.size(img))
 }
