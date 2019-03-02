@@ -11,7 +11,7 @@
 #' @export
 #'
 #' @examples
-#' compress(img_path, 5L, paste(normalizePath(dirname(img_path)), "/abc.png", sep=""))
+#'
 
 compress <- function(img_path, b, out_path) {
 
@@ -29,10 +29,6 @@ compress <- function(img_path, b, out_path) {
 
   if (b <= 0 | b > 8) {
     stop("ValueError")
-  }
-
-  if (dim(unique(readImage(img_path)))[1] < 2^b) {
-    stop("Choose a smaller b.")
   }
 
   if (dim(unique(readImage(img_path)))[1] < 2) {
@@ -54,7 +50,6 @@ compress <- function(img_path, b, out_path) {
     file.remove(desired_size_img)
     stop("Choose a smaller b.")
   }
-
   file.remove(min_size_img)
   file.remove(desired_size_img)
   return(compression(img_path, b, out_path))

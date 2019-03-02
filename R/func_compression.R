@@ -22,12 +22,12 @@ compression <- function(img_path, b, out_path) {
   W <- dim(image)[2]
   C <- dim(image)[3]
 
-  image <- array_reshape(image, dim = c(H*W, C))
-  model <- kmeans(image, centers = 2^b)
+  image <- reticulate::array_reshape(image, dim = c(H*W, C))
+  model <- kmeans(image, centers = 2^b, nstart = 35, iter.max = 20)
 
   labels <- model$cluster
   clrs <- model$centers
-  quantized_img <- array_reshape(labels, dim = c(H, W))
+  quantized_img <- reticulate::array_reshape(labels, dim = c(H, W))
 
   image <- array(0, dim = c(H,W,C))
 

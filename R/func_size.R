@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @examples
-#' image_size(img)
+#'
 
 image_size <- function(img) {
 
