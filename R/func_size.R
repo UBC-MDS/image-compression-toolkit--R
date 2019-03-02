@@ -2,7 +2,7 @@
 #'
 #' Calculate the size of an image
 #'
-#' @param img array
+#' @param img String . path of image
 #'
 #' @return integer
 #' @export
@@ -11,5 +11,9 @@
 #' image_size(img)
 
 image_size <- function(img) {
+
+  if (assertthat::is.string(img)==FALSE) {
+    stop("TypeError")
+  }
     return(file.size(img))
 }

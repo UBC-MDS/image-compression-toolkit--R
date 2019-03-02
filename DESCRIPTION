@@ -22,4 +22,5 @@ Imports:
     testthat,
     reticulate,
     rprojroot,
-    assertthat
+    assertthat,
+    covr
