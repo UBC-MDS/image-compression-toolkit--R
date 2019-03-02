@@ -9,37 +9,92 @@ Two ways to compress your images!
 
 ## Project Summary
 
-This R package specializes in reducing the size of images. It contains two main functions :`crop()`, and `compress()`. The `crop()` functions reduce the size of an image by reducing the height and width of an image to the size specified by the user. The `compress()` function reduces the size of an image by reducing the number of bits used in each colour channel of the image. The package could be used by people to reduce the size of images, which could then be uploaded to social media platforms or other websites and applications.
+This R package specializes in reducing the size of images. It contains two main functions :`crop()`, and `compress()`. The `crop()` functions reduce the size of an image by reducing the height and width of an image to the size specified by the user. The `compress()` function reduces the size of an image by reducing the number of bits used in each colour channel of the image. The package could be used by people to reduce the size of images, which could then be uploaded to social media platforms or other websites and applications that have limits on image size.
 
 ## Functions
 
-- `crop(image, height, width)`
+- `crop(img_path, H, W, out_path)`
   - Description:
-    This function will reduce the image to the specified size removing rows and columns of pixels from the borders.
-  - Input:
-    - image (3d array)
-    - desired_height (integer)
-    - desired_width (integer)
+    This function reduces the image to the specified size by removing rows and columns of pixels from the borders.
+  - Inputs:  
+
+|Parameter |Type |Description |
+|----------|-----|------------| 
+|`img_path`|`string`| File path to a `png` image|
+|`H`|`int`| Desired height of the cropped image |
+|`W`|`int`| Desired width of the cropped image|
+|`out_path`|``string`| File path to where to save the cropped `png` image |  
+
   - Output:
-    - cropped image (3d array, size `desired_height x desired_width x 3`)
-- `compress(image, b = 4)`
+    - `string`, file path to cropped image (`png` image with size `H x W`)  
+
+- `compress(image, b, out_path)`
   - Description:
     This function compresses the image by reducing the number of bits for each channel based on user input.
-  - Input:
-    - image (3d array)
-    - b (integer, range [1, 7] (number of bits used for each channel in the compressed image))
+  - Inputs:  
+
+|Parameter |Type |Description |
+|----------|-----|------------| 
+|`img_path`|`string`| File path to a `png` image|
+|`b`|`int`| An integer between 1 and 8; number of bits used for each channel in the compressed image |
+|`out_path`|`string`| File path to where to save the compressed `png` image |
   - Output:
-    - image (3d array, compressed to `b` bits)
+    - `string`, file path to the compressed `png` image   
+
+
 - `image_size(image)`
   - Description:
     Calculates and returns the size of an image in bytes.
   - Input:
-    - image (3d array)
+    - `string`, file path to a `png` image
   - Output:
-    - size (integer, size in bytes)
-    
-## Coverage  
-[![Coverage status](https://codecov.io/gh/UBC-MDS/image-compression-toolkit--R/branch/master/graph/badge.svg)](https://codecov.io/github/UBC-MDS/image-compression-toolkit--R?branch=master)
+    - `int`, size of the image in bytes 
+
+## Usage 
+|Task    |  In a Script (after, `library(imageCompress)`)   |
+|---------|---------------------|
+|Crop `image.png` to size 10 X 15  |  `crop("../image.png", H = 10, W = 15, "..//cropped_image.png")`| 
+|Compress an `image.png` to 5 bits per channel |  `compress("..//image.png", b = 5, "..//compressed_image.png")` |
+|Get the size of `image.png`|  `image_size("..//image.png")`|
+
+## Examples
+
+The following examples use the `bigger_test.png` image from the data folder, displayed below. 
+<img src = "https://raw.githubusercontent.com/UBC-MDS/image-compression-toolkit--R/update_tests/data/bigger_test.png" >
+
+To get the size of the image:
+```
+import imageCompress
+image_size("../data/bigger_test.png")
+```
+> This returns the size of the image in bytes.
+```
+45534
+```
+
+To crop the image:  
+```
+crop("../data/bigger_test.png", 175, 200, "../data/crop_img.png")
+```
+
+> This returns the absolute file path to the cropped image, as specified in the `out_path` argument of the function. The cropped image is shown below. 
+
+<img src = "https://raw.githubusercontent.com/UBC-MDS/image-compression-toolkit--R/update_tests/data/crop_img.png" >
+
+To compress the image:
+```
+compress("..data/bigger_test.png", 2, "../data/compressed_img.png")
+```
+
+> This returns the absolute file path to the compressed image. The compressed image is shown below.   
+
+<img src = "https://raw.githubusercontent.com/UBC-MDS/image-compression-toolkit--R/update_tests/data/compressed_img.png" >
+
+## Test Results  
+ 
+## Branch Coverage  
+<img src = "https://raw.githubusercontent.com/UBC-MDS/image-compression-toolkit--R/update_tests/data/branch_coverage.png" width = "555">
+
 
 ## Related Packages
 There already are packages for image processing in R and Python:
