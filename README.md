@@ -50,6 +50,11 @@ This R package specializes in reducing the size of images. It contains two main 
   - Output:
     - `int`, size of the image in bytes 
 
+## Installation
+
+To install this package, use the following command in the R console:
+> ```devtools::install_github(UBC-MDS/image-compression-toolkit--R)```
+
 ## Usage 
 |Task    |  In a Script (after, `library(imageCompress)`)   |
 |---------|---------------------|
@@ -64,7 +69,7 @@ The following examples use the `bigger_test.png` image from the data folder, dis
 
 To get the size of the image:
 ```
-import imageCompress
+library(imageCompress)
 image_size("../data/bigger_test.png")
 ```
 > This returns the size of the image in bytes.
@@ -101,5 +106,5 @@ There already are packages for image processing in R and Python:
   - [The magick package in R](https://cran.r-project.org/web/packages/magick/vignettes/intro.html)
   - [sckit-image in Python](https://scikit-image.org/)
 
-The existing packages are very comprehensive and provide many functions such as transformations, filters, file conversions and other advanced functions. Our package focuses specifically on image compression and reducing image size using K-means Clustering. This package is not a wrapper or an improvement of an existing package. It simply uses an unsupervised learning algorithm (K-means clustering) to reduce the number of bits used to represent an image.
+The existing packages are very comprehensive and provide many functions such as transformations, filters, file conversions and other advanced functions. Our package focuses specifically on image compression and reducing image size using K-means clustering. This package is not a wrapper or an improvement of an existing package. It simply uses an unsupervised learning algorithm (K-means clustering) to reduce the number of bits used to represent an image.
 
