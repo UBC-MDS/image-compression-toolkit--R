@@ -11,9 +11,11 @@
 
 compression <- function(img_path, b, out_path) {
   
-  if (is.string(img_path) == FALSE) {
+  if (is.string(img_path) == FALSE | is.string(out_path) == FALSE) {
     stop("TypeError1")
   }
+  
+  
   
   if (is.integer(b) == FALSE) {
     stop("TypeError2")
