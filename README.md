@@ -83,7 +83,9 @@ crop("../data/bigger_test.png", 175L, 200L, "../data/crop_img.png")
 ```
 
 > This returns the absolute file path to the cropped image, as specified in the `out_path` argument of the function. The cropped image is shown below. 
-
+```
+..data/cropped_img.png
+```
 <img src = "https://raw.githubusercontent.com/UBC-MDS/image-compression-toolkit--R/update_tests/data/crop_img.png" >
 
 To compress the image:
@@ -92,7 +94,9 @@ compress("..data/bigger_test.png", 2L, "../data/compressed_img.png")
 ```
 
 > This returns the absolute file path to the compressed image. The compressed image is shown below.   
-
+```
+..data/compressed_img.png
+```
 <img src = "https://raw.githubusercontent.com/UBC-MDS/image-compression-toolkit--R/update_tests/data/compressed_img.png" >
 
 ## Test Results  
