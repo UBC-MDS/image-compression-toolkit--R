@@ -1,12 +1,14 @@
 Package: imageCompressR
 Title: It compresses images
 Version: 0.0.0.9000
-Authors@R: 
-    person(given = "Sayanti,Aditya,Alden",
-           family = "Ghosh,Sharma,Chen",
-           role = c("aut", "cre"),
-           email = "first.last@example.com")
+Authors@R: c(
+    person("Sayanti","Ghosh",role = c("aut","cre"),email = "sayanti.1986.ghosh@gmail.com"),
+    person("Aditya","sharma",role = "aut",email = "sayanti.1986.ghosh@gmail.com"),
+    person("Alden","Chen",role = "aut",email = "sayanti.1986.ghosh@gmail.com"))
 Description: It compresses image shape by cropping and reducing memory size .
+    Compress function reduces the byte size of image , 
+    crop function crops the image form all sides .
+    Image_size function measures the size of the image (memory)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -17,4 +19,6 @@ Imports:
     png,
     OpenImageR,
     here,
-    testthat
+    testthat,
+    rprojroot,
+    assertthat
