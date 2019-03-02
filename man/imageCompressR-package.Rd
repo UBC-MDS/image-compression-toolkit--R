@@ -8,8 +8,8 @@
 \description{
 It compresses image shape by cropping and reducing memory size .
     Compress function reduces the byte size of image , 
-    crop function crops the image form all sides and image_size 
-    function measures the size of the image (memory)
+    crop function crops the image form all sides .
+    Image_size function measures the size of the image (memory)
 }
 \author{
 \strong{Maintainer}: Sayanti Ghosh \email{sayanti.1986.ghosh@gmail.com}
