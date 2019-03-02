@@ -96,6 +96,7 @@ compress("..data/bigger_test.png", 2L, "../data/compressed_img.png")
 <img src = "https://raw.githubusercontent.com/UBC-MDS/image-compression-toolkit--R/update_tests/data/compressed_img.png" >
 
 ## Test Results  
+<img src = "https://raw.githubusercontent.com/UBC-MDS/image-compression-toolkit--R/update_tests/data/test_results.png">
  
 ## Branch Coverage  
 <img src = "https://raw.githubusercontent.com/UBC-MDS/image-compression-toolkit--R/update_tests/data/branch_coverage.png" width = "555">
