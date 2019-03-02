@@ -21,5 +21,5 @@ Compress the size an image by reducing the number of bits
 used to represent each pixel to b
 }
 \examples{
-compress(img_path, 5L, paste(normalizePath(dirname(img_path)), "/abc.png", sep=""))
+
 }
