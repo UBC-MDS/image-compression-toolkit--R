@@ -20,5 +20,6 @@ Imports:
     OpenImageR,
     here,
     testthat,
+    reticulate,
     rprojroot,
     assertthat
