@@ -58,8 +58,8 @@ To install this package, use the following command in the R console:
 ## Usage 
 |Task    |  In a Script (after, `library(imageCompress)`)   |
 |---------|---------------------|
-|Crop `image.png` to size 10 X 15  |  `crop("../image.png", H = 10, W = 15, "..//cropped_image.png")`| 
-|Compress an `image.png` to 5 bits per channel |  `compress("..//image.png", b = 5, "..//compressed_image.png")` |
+|Crop `image.png` to size 10 X 15  |  `crop("../image.png", H = 10L, W = 15L, "..//cropped_image.png")`| 
+|Compress an `image.png` to 5 bits per channel |  `compress("..//image.png", b = 5L, "..//compressed_image.png")` |
 |Get the size of `image.png`|  `image_size("..//image.png")`|
 
 ## Examples
@@ -79,7 +79,7 @@ image_size("../data/bigger_test.png")
 
 To crop the image:  
 ```
-crop("../data/bigger_test.png", 175, 200, "../data/crop_img.png")
+crop("../data/bigger_test.png", 175L, 200L, "../data/crop_img.png")
 ```
 
 > This returns the absolute file path to the cropped image, as specified in the `out_path` argument of the function. The cropped image is shown below. 
@@ -88,7 +88,7 @@ crop("../data/bigger_test.png", 175, 200, "../data/crop_img.png")
 
 To compress the image:
 ```
-compress("..data/bigger_test.png", 2, "../data/compressed_img.png")
+compress("..data/bigger_test.png", 2L, "../data/compressed_img.png")
 ```
 
 > This returns the absolute file path to the compressed image. The compressed image is shown below.   
