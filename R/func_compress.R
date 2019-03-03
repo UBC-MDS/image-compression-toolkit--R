@@ -11,7 +11,7 @@
 #' @export
 #'
 #' @examples
-#' compress(img_path, 5L, paste(normalizePath(dirname(img_path)), "/abc.png", sep=""))
+#'
 
 compress <- function(img_path, b, out_path) {
 
@@ -31,13 +31,13 @@ compress <- function(img_path, b, out_path) {
     stop("ValueError")
   }
 
-  if (dim(unique(readImage(img_path)))[1] < 2^b) {
-    stop("Choose a smaller b.")
-  }
-
-  if (dim(unique(readImage(img_path)))[1] < 2) {
-    stop("Can't compress further.")
-  }
+  # if (dim(unique(readImage(img_path)))[1] < 2^b) {
+  #   stop("Choose a smaller b.")
+  # }
+  #
+  # if (dim(unique(readImage(img_path)))[1] < 2) {
+  #   stop("Can't compress further.")
+  # }
 
   min_size_img <- compression(img_path, 1L,
                               paste(normalizePath(dirname(img_path)), "\\min.png", sep=""))

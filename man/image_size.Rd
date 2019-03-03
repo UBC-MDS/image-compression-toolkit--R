@@ -7,7 +7,7 @@
 image_size(img)
 }
 \arguments{
-\item{img}{array}
+\item{img}{String . path of image}
 }
 \value{
 integer
@@ -16,5 +16,5 @@ integer
 Calculate the size of an image
 }
 \examples{
-image_size(img)
+
 }

@@ -24,3 +24,7 @@ Imports:
     rprojroot,
     assertthat,
     covr
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

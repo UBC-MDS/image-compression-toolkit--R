@@ -39,7 +39,7 @@ This R package specializes in reducing the size of images. It contains two main 
     - size (integer, size in bytes)
     
 ## Coverage  
-[![Coverage status](https://codecov.io/gh/UBC-MDS/image-compression-toolkit--R/branch/master/graph/badge.svg)](https://codecov.io/github/UBC-MDS/image-compression-toolkit--R?branch=master)
+
 
 ## Related Packages
 There already are packages for image processing in R and Python:
