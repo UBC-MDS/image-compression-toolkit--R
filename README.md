@@ -53,7 +53,7 @@ This R package specializes in reducing the size of images. It contains two main 
 ## Installation
 
 To install this package, use the following command in the R console:
-> ```devtools::install_github("UBC-MDS/image-compression-toolkit--R")```
+> ```devtools::install_github("UBC-MDS/image-compression-toolkit--R", dependencies = TRUE)```
 
 ## Usage 
 |Task    |  In a Script (after, `library(imageCompress)`)   |
