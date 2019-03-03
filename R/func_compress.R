@@ -31,13 +31,9 @@ compress <- function(img_path, b, out_path) {
     stop("ValueError")
   }
 
-  # if (dim(unique(readImage(img_path)))[1] < 2^b) {
-  #   stop("Choose a smaller b.")
-  # }
-  #
-  # if (dim(unique(readImage(img_path)))[1] < 2) {
-  #   stop("Can't compress further.")
-  # }
+  if (dim(unique(readImage(img_path)))[1] < 2) {
+    stop("Can't compress further.")
+  }
 
   min_size_img <- compression(img_path, 1L,
                               paste(normalizePath(dirname(img_path)), "\\min.png", sep=""))
@@ -54,7 +50,6 @@ compress <- function(img_path, b, out_path) {
     file.remove(desired_size_img)
     stop("Choose a smaller b.")
   }
-
   file.remove(min_size_img)
   file.remove(desired_size_img)
   return(compression(img_path, b, out_path))

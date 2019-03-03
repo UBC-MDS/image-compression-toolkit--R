@@ -51,13 +51,20 @@ test_that("compress(img,b,out)  checking the compressed image shape", {
   expect_equal(dim(readImage(compress(img, 6L, out))), dim(readImage(img)))
 })
 
-# Check for images that can't be compressed
+#Test Case 5: Check for images that can't be compressed
 test_that("compress(img, b,out) check that errors are raised when image cannot be compressed", {
   expect_error(compress(small_image, 1L, out), "Can't compress further.")
+<<<<<<< HEAD
   expect_error(compress(small_image, 6L, out), "Choose a smaller b.")
   #expect_error(compress(ones, 1L, out), "Can't compress further.")
   expect_error(compress(big_image, 4L, out), "Choose a smaller b.")
   expect_error(compress(big_image, 7L, out), "Choose a smaller b.")
+=======
+  #expect_error(compress(small_image, 5L, out), "Choose a smaller b.")
+  expect_error(compress(ones, 1L, out), "Can't compress further.")
+  expect_error(compress(big_image, 4L, out), "Choose a smaller b.")
+  #expect_error(compress(big_image, 7L, out), "Choose a smaller b.")
+>>>>>>> master
   #expect_error(compress(img_1819, 5L, out), "Choose a smaller b.")
 
 })

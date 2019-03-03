@@ -17,7 +17,7 @@
 #library(png)
 #library(OpenImageR)
 #library(assertthat)
-crop <- function(img_path, H, W,out_path){
+crop <- function(img_path, H, W, out_path){
 
   #---------------------------------Exception Handling--------------------------------#
   # Exception handling for input validation like Type error, invalid values ,         #
@@ -61,11 +61,9 @@ crop <- function(img_path, H, W,out_path){
 
   img = image[start_row:end_row,start_col:end_col,]
 
-  path<-paste(normalizePath(dirname(out_path)),"\\Crop_image.png", sep = "")
-  save <-writePNG(img,target=path)
+  save <- writePNG(img,target=out_path)
 
-  print(paste("The cropped image path is :",path))
-  return(path)
+  return(out_path)
 
 }
 

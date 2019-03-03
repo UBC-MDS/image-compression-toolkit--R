@@ -23,7 +23,7 @@ compression <- function(img_path, b, out_path) {
   C <- dim(image)[3]
 
   image <- reticulate::array_reshape(image, dim = c(H*W, C))
-  model <- kmeans(image, centers = 2^b, nstart = 25)
+  model <- kmeans(image, centers = 2^b, nstart = 35, iter.max = 20)
 
   labels <- model$cluster
   clrs <- model$centers
