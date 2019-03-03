@@ -1,7 +1,7 @@
 ---
 title: "imageCompressR Package Manifesto"
 author: "Sayanti Ghosh,Aditya Sharma,Alden Chen"
-date: "`r Sys.Date()`"
+date: "2019-03-02"
 output:
   rmarkdown::html_vignette:
     toc: true
@@ -12,12 +12,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r setup, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
-```
+
 
 ## Package Info
 
