@@ -19,7 +19,7 @@ This R package specializes in reducing the size of images. It contains two main 
   - Inputs:  
 
 |Parameter |Type |Description |
-|----------|-----|------------| 
+|----------|-----|------------|
 |`img_path`|`string`| File path to a `png` image|
 |`H`|`int`| Desired height of the cropped image |
 |`W`|`int`| Desired width of the cropped image|
@@ -34,7 +34,7 @@ This R package specializes in reducing the size of images. It contains two main 
   - Inputs:  
 
 |Parameter |Type |Description |
-|----------|-----|------------| 
+|----------|-----|------------|
 |`img_path`|`string`| File path to a `png` image|
 |`b`|`int`| An integer between 1 and 8; number of bits used for each channel in the compressed image |
 |`out_path`|`string`| File path to where to save the compressed `png` image |
@@ -48,23 +48,23 @@ This R package specializes in reducing the size of images. It contains two main 
   - Input:
     - `string`, file path to a `png` image
   - Output:
-    - `int`, size of the image in bytes 
+    - `int`, size of the image in bytes
 
 ## Installation
 
 To install this package, use the following command in the R console:
 > ```devtools::install_github(UBC-MDS/image-compression-toolkit--R)```
 
-## Usage 
+## Usage
 |Task    |  In a Script (after, `library(imageCompress)`)   |
 |---------|---------------------|
-|Crop `image.png` to size 10 X 15  |  `crop("../image.png", H = 10L, W = 15L, "..//cropped_image.png")`| 
+|Crop `image.png` to size 10 X 15  |  `crop("../image.png", H = 10L, W = 15L, "..//cropped_image.png")`|
 |Compress an `image.png` to 5 bits per channel |  `compress("..//image.png", b = 5L, "..//compressed_image.png")` |
 |Get the size of `image.png`|  `image_size("..//image.png")`|
 
 ## Examples
 
-The following examples use the `bigger_test.png` image from the data folder, displayed below. 
+The following examples use the `bigger_test.png` image from the data folder, displayed below.
 <img src = "https://raw.githubusercontent.com/UBC-MDS/image-compression-toolkit--R/update_tests/data/bigger_test.png" >
 
 To get the size of the image:
@@ -82,7 +82,7 @@ To crop the image:
 crop("../data/bigger_test.png", 175L, 200L, "../data/crop_img.png")
 ```
 
-> This returns the absolute file path to the cropped image, as specified in the `out_path` argument of the function. The cropped image is shown below. 
+> This returns the absolute file path to the cropped image, as specified in the `out_path` argument of the function. The cropped image is shown below.
 ```
 ..data/cropped_img.png
 ```
@@ -101,7 +101,7 @@ compress("..data/bigger_test.png", 2L, "../data/compressed_img.png")
 
 ## Test Results  
 <img src = "https://raw.githubusercontent.com/UBC-MDS/image-compression-toolkit--R/update_tests/data/test_results.png">
- 
+
 ## Branch Coverage  
 <img src = "https://raw.githubusercontent.com/UBC-MDS/image-compression-toolkit--R/update_tests/data/branch_coverage.png" width = "555">
 
@@ -112,4 +112,3 @@ There already are packages for image processing in R and Python:
   - [sckit-image in Python](https://scikit-image.org/)
 
 The existing packages are very comprehensive and provide many functions such as transformations, filters, file conversions and other advanced functions. Our package focuses specifically on image compression and reducing image size using K-means clustering. This package is not a wrapper or an improvement of an existing package. It simply uses an unsupervised learning algorithm (K-means clustering) to reduce the number of bits used to represent an image.
-

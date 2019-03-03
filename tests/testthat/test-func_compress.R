@@ -1,5 +1,5 @@
 context("compress")
-library(pryr)
+#library(pryr)
 library(testthat)
 library(OpenImageR)
 library(rprojroot)
@@ -27,7 +27,7 @@ test_that("compress(img,b,out) for checking value of b", {
 #Test Case 2 : Invalid Type
 test_that("compress(img,b,out) checks TypeError gets raised for invalid Type", {
 
-  expect_error(compress(img, 2.2L, out),"TypeError")
+  expect_error(compress(img, 2.2, out),"TypeError")
   expect_error(compress(img, TRUE, out),"TypeError")
   expect_error(compress(33L, 6L, out),"TypeError")
   expect_error(compress(img, 5L, TRUE),"TypeError")
