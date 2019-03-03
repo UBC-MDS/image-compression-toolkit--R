@@ -1,4 +1,4 @@
-# Image Compression Toolkit - R
+## Image Compression Toolkit - R
 Two ways to compress your images!
 
 ## Contributors
@@ -53,7 +53,7 @@ This R package specializes in reducing the size of images. It contains two main 
 ## Installation
 
 To install this package, use the following command in the R console:
-> ```devtools::install_github(UBC-MDS/image-compression-toolkit--R)```
+> ```devtools::install_github("UBC-MDS/image-compression-toolkit--R")```
 
 ## Usage
 |Task    |  In a Script (after, `library(imageCompress)`)   |
