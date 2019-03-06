@@ -7,6 +7,7 @@
 #' @return String, compressed image path
 #'
 #' @examples
+#' # compression("../data/image.png", 2L, "..data/comrpessed_image.png")
 #'
 #library(reticulate)
 #library(numbers)

@@ -22,6 +22,6 @@ crop(img_path, H, W, out_path)
 Crop images
 }
 \examples{
-
+# crop("..data/image.png", 10L, 15L, "..data/cropped_image.png")
 
 }

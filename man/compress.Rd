@@ -21,5 +21,6 @@ Compress the size an image by reducing the number of bits
 used to represent each pixel to b
 }
 \examples{
+# compress("..data/image.png", 2L, "..data/compressed_image.png")
 
 }
