@@ -1,4 +1,4 @@
-# Image Compression Toolkit - R
+## Image Compression Toolkit - R
 Two ways to compress your images!
 
 ## Contributors
@@ -13,7 +13,7 @@ This R package specializes in reducing the size of images. It contains two main 
 
 ## Functions
 
-- `crop(img_path, H, W, out_path)`
+`crop(img_path, H, W, out_path)`
   - Description:
     This function reduces the image to the specified size by removing rows and columns of pixels from the borders.
   - Inputs:  
@@ -25,10 +25,9 @@ This R package specializes in reducing the size of images. It contains two main 
 |`W`|`int`| Desired width of the cropped image|
 |`out_path`|`string`| File path to where to save the cropped `png` image |  
 
-  - Output:
-    - `string`, file path to cropped image (`png` image with size `H x W`)  
+- Output:  `string`, file path to cropped image (`png` image with size `H x W`)  
 
-- `compress(image, b, out_path)`
+`compress(image, b, out_path)`
   - Description:
     This function compresses the image by reducing the number of bits for each channel based on user input.
   - Inputs:  
@@ -38,22 +37,20 @@ This R package specializes in reducing the size of images. It contains two main 
 |`img_path`|`string`| File path to a `png` image|
 |`b`|`int`| An integer between 1 and 8; number of bits used for each channel in the compressed image |
 |`out_path`|`string`| File path to where to save the compressed `png` image |
-  - Output:
-    - `string`, file path to the compressed `png` image   
+  - Output:  `string`, file path to the compressed `png` image   
 
 
-- `image_size(image)`
+`image_size(image)`
   - Description:
     Calculates and returns the size of an image in bytes.
   - Input:
     - `string`, file path to a `png` image
-  - Output:
-    - `int`, size of the image in bytes
+  - Output: `int`, size of the image in bytes
 
 ## Installation
 
 To install this package, use the following command in the R console:
-> ```devtools::install_github(UBC-MDS/image-compression-toolkit--R)```
+> ```devtools::install_github("UBC-MDS/image-compression-toolkit--R", build_opts = c("--no-resave-data", "--no-manual"))```
 
 ## Usage
 |Task    |  In a Script (after, `library(imageCompress)`)   |
