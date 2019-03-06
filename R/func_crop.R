@@ -19,7 +19,7 @@
 #' @import covr
 #'
 #' @examples
-#'
+#'# crop("..data/image.png", 10L, 15L, "..data/cropped_image.png")
 #'
 #------------------------------------Library------------------------------------------#
 crop <- function(img_path, H, W, out_path){

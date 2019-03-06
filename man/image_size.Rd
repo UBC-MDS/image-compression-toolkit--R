@@ -16,5 +16,5 @@ integer
 Calculate the size of an image
 }
 \examples{
-
+# image_size("../data/image.png")
 }

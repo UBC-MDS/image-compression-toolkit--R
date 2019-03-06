@@ -17,20 +17,20 @@ ones <- root_file("data-raw", "ones.png")
 #Test Case 1 : Invalid value .
 test_that("compress(img,b,out) for checking value of b", {
 
-  expect_error(compress(img, -1L, out),"ValueError")
-  expect_error(compress(img, 9L, out),"ValueError")
-  expect_error(compress(img, 0L, out),"ValueError")
-  expect_error(compress(img, 1000L, out),"ValueError")
-  expect_error(compress(img, -1000L, out),"ValueError")
+  expect_error(compress(img, -1L, out),"ValueError: b should be an integer between 1L and 8L")
+  expect_error(compress(img, 9L, out),"ValueError: b should be an integer between 1L and 8L")
+  expect_error(compress(img, 0L, out),"ValueError: b should be an integer between 1L and 8L")
+  expect_error(compress(img, 1000L, out),"ValueError: b should be an integer between 1L and 8L")
+  expect_error(compress(img, -1000L, out),"ValueError: b should be an integer between 1L and 8L")
 })
 
 #Test Case 2 : Invalid Type
 test_that("compress(img,b,out) checks TypeError gets raised for invalid Type", {
 
-  expect_error(compress(img, 2.2, out),"TypeError")
-  expect_error(compress(img, TRUE, out),"TypeError")
-  expect_error(compress(33L, 6L, out),"TypeError")
-  expect_error(compress(img, 5L, TRUE),"TypeError")
+  expect_error(compress(img, 2.2, out),"TypeError: b should be an integer, e.g. 2L")
+  expect_error(compress(img, TRUE, out),"TypeError: b should be an integer, e.g. 2L")
+  expect_error(compress(33L, 6L, out),"TypeError: img_path should be a string")
+  expect_error(compress(img, 5L, TRUE),"TypeError: out_path should be a string")
 })
 
 #Test Case 3 : Checking new image object size
@@ -56,7 +56,7 @@ test_that("compress(img, b,out) check that errors are raised when image cannot b
   expect_error(compress(small_image, 1L, out), "Can't compress further.")
   #expect_error(compress(small_image, 5L, out), "Choose a smaller b.")
   expect_error(compress(ones, 1L, out), "Can't compress further.")
-  expect_error(compress(big_image, 4L, out), "Choose a smaller b.")
+  expect_error(compress(big_image, 4L, out), "Choose a smaller b to compress.")
   #expect_error(compress(big_image, 7L, out), "Choose a smaller b.")
   #expect_error(compress(img_1819, 5L, out), "Choose a smaller b.")
 

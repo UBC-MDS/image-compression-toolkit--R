@@ -21,24 +21,25 @@
 #' @import covr
 #' @import stats
 #' @examples
+#' # compress("..data/image.png", 2L, "..data/compressed_image.png")
 #'
 
 compress <- function(img_path, b, out_path) {
 
   if (is.character(out_path) == FALSE) {
-    stop("TypeError")
+    stop("TypeError: out_path should be a string")
   }
 
   if (is.character(img_path) == FALSE) {
-    stop("TypeError")
+    stop("TypeError: img_path should be a string")
   }
 
   if (is.integer(b) == FALSE) {
-    stop("TypeError")
+    stop("TypeError: b should be an integer, e.g. 2L")
   }
 
   if (b <= 0 | b > 8) {
-    stop("ValueError")
+    stop("ValueError: b should be an integer between 1L and 8L")
   }
 
   if (dim(unique(readImage(img_path)))[1] < 2) {
@@ -58,7 +59,7 @@ compress <- function(img_path, b, out_path) {
   if (image_size(desired_size_img) > image_size(img_path)){
     file.remove(min_size_img)
     file.remove(desired_size_img)
-    stop("Choose a smaller b.")
+    stop("Choose a smaller b to compress.")
   }
   file.remove(min_size_img)
   file.remove(desired_size_img)

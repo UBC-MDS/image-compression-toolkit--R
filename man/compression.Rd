@@ -20,5 +20,6 @@ String, compressed image path
 Title
 }
 \examples{
+# compression("../data/image.png", 2L, "..data/comrpessed_image.png")
 
 }

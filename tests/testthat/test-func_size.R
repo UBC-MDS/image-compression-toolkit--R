@@ -15,7 +15,7 @@ test_that("correct size is returned", {
 })
 
 test_that("type error should be raised if wrong input is entered", {
-  expect_error(image_size(5), "TypeError")
+  expect_error(image_size(5), "TypeError: img_path should be a string.")
 })
 
 test_that("input array is correct shape",{

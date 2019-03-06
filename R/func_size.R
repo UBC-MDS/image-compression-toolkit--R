@@ -8,12 +8,12 @@
 #' @export
 #'
 #' @examples
-#'
+#' # image_size("../data/image.png")
 
 image_size <- function(img) {
 
   if (assertthat::is.string(img)==FALSE) {
-    stop("TypeError")
+    stop("TypeError: img_path should be a string.")
   }
     return(file.size(img))
 }
