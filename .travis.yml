@@ -7,11 +7,13 @@ dist: trusty
 cache: packages
 
 before_install:
-    - pip install numpy
+  - pip install numpy
 
 r_packages:
-    - testthat
-    - reticulate
+  - testthat
+  - reticulate
 
+after_success:
+- Rscript -e 'covr::codecov()'
 
 
