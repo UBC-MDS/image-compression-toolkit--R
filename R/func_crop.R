@@ -26,7 +26,7 @@ crop <- function(img_path, H, W, out_path){
 
   #---------------------------------Exception Handling--------------------------------#
   # Exception handling for input validation like Type error, invalid values ,         #
-  # unrealistic desired dimension                                                     #
+  # unrealistic desired dimension.                                                    #
   #-----------------------------------------------------------------------------------#
   if (assertthat::is.string(img_path)==FALSE){
     stop("TypeError: Only acceptable input should be a valid image path in string format.")
