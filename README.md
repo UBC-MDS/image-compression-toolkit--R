@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/UBC-MDS/image-compression-toolkit--R.svg?branch=master)](https://travis-ci.org/UBC-MDS/image-compression-toolkit--R)
+
 ## Image Compression Toolkit - R
 Two ways to compress your images!
 
