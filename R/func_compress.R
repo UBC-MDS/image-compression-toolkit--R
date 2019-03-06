@@ -9,7 +9,17 @@
 #'
 #' @return String, compressed image path
 #' @export
-#'
+#' @import numbers
+#' @import R.utils
+#' @import png
+#' @import OpenImageR
+#' @import here
+#' @import testthat
+#' @import reticulate
+#' @import rprojroot
+#' @import assertthat
+#' @import covr
+#' @import stats
 #' @examples
 #'
 

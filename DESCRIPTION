@@ -5,10 +5,10 @@ Authors@R: c(
     person("Sayanti","Ghosh",role = c("aut","cre"),email = "sayanti.1986.ghosh@gmail.com"),
     person("Aditya","sharma",role = "aut",email = "sayanti.1986.ghosh@gmail.com"),
     person("Alden","Chen",role = "aut",email = "sayanti.1986.ghosh@gmail.com"))
-Description: It compresses image shape by cropping and reducing memory size .
-    Compress function reduces the byte size of image , 
-    crop function crops the image form all sides .
-    Image_size function measures the size of the image (memory)
+Description: It compresses image shape by cropping and reducing memory size.
+    Compress function reduces the byte size of image, 
+    crop function crops the image form all sides.
+    Image_size function measures the size of the image (memory).
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
