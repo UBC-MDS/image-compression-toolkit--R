@@ -7,7 +7,7 @@ dist: trusty
 cache: packages
 
 before_install:
-  - pip install numpy mwparserfromhell
+  - pip install numpy
 
 r_packages:
    - testthat
