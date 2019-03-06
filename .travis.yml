@@ -1,7 +1,17 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 
-language: R
-sudo: false
+language: r
+warnings_are_errors: false
+sudo: required
+dist: trusty
 cache: packages
+
+before_install:
+  - pip install numpy
+
+r_packages:
+   - testthat
+   - reticulate
+
 
 
