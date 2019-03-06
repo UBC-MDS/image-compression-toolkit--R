@@ -8,12 +8,12 @@
 #'
 #' @examples
 #'
-library(reticulate)
-library(numbers)
-library(R.utils)
-library(png)
-library(OpenImageR)
-library(assertthat)
+#library(reticulate)
+#library(numbers)
+#library(R.utils)
+#library(png)
+#library(OpenImageR)
+#library(assertthat)
 
 compression <- function(img_path, b, out_path) {
 

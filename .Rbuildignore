@@ -8,6 +8,7 @@
 ^CONDUCT\.md$
 ^CONTRIBUTING\.md$
 ^DESCRIPTION\.md$
-^func_compress\.R$
-^func_compression\.R$
-^func_crop\.R$
+^compress\.Rd$
+^compression\.Rd$
+^crop\.Rd$
+

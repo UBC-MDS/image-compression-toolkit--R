@@ -7,6 +7,16 @@
 #'
 #' @return     ---String , cropped image path and saves the image .
 #' @export
+#' @import numbers
+#' @import R.utils
+#' @import png
+#' @import OpenImageR
+#' @import here
+#' @import testthat
+#' @import reticulate
+#' @import rprojroot
+#' @import assertthat
+#' @import covr
 #'
 #' @examples
 #'
