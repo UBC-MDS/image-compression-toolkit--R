@@ -28,26 +28,26 @@ test_that("function returns the correct output shape", {
 })
 
 test_that("function raises value error when invalid values passed in for height and width", {
-  expect_error(crop(image, -1L, 10L,out_img), "ValueError")
-  expect_error(crop(image, 10L, -1L,out_img), "ValueError")
-  expect_error(crop(image, 0L, 0L,out_img), "ValueError")
-  expect_error(crop(image, 0L, 10L,out_img), "ValueError")
-  expect_error(crop(image, 10L, 0L,out_img), "ValueError")
-  expect_error(crop(image, dim(readImage(image))[1] + 1, 10,out_img), "ValueError")
-  expect_error(crop(image, 10L, dim(readImage(image))[2] + 1,out_img), "ValueError")
-  expect_error(crop(image, -10000L, 10L,out_img), "ValueError")
-  expect_error(crop(image, 10L, -10L,out_img), "ValueError")
+  expect_error(crop(image, -1L, 10L,out_img), "ValueError: Desired height cannot be less than or equal to zero")
+  expect_error(crop(image, 10L, -1L,out_img), "ValueError: Desired width cannot be less than or equal to zero")
+  expect_error(crop(image, 0L, 0L,out_img), "ValueError: Desired height cannot be less than or equal to zero")
+  expect_error(crop(image, 0L, 10L,out_img), "ValueError: Desired height cannot be less than or equal to zero")
+  expect_error(crop(image, 10L, 0L,out_img), "ValueError: Desired width cannot be less than or equal to zero")
+  expect_error(crop(image, dim(readImage(image))[1] + 1, 10,out_img), "ValueError: Desired height cannot be more than original height")
+  expect_error(crop(image, 10L, dim(readImage(image))[2] + 1,out_img), "ValueError: Desired width cannot be more than original width")
+  expect_error(crop(image, -10000L, 10L,out_img), "ValueError: Desired height cannot be less than or equal to zero")
+  expect_error(crop(image, 10L, -10L,out_img), "ValueError: Desired width cannot be less than or equal to zero")
 
 })
 
 test_that("function raises type error when invalid types are passed in", {
-  expect_error(crop(image, 9.5, 10,out_img), "TypeError")
-  expect_error(crop(image, 10, 9.5,out_img), "TypeError")
-  expect_error(crop(image, 9.5, 9.5,out_img), "TypeError")
-  expect_error(crop(image, -9.9, -4.5,out_img), "ValueError")
-  expect_error(crop(image, "10", TRUE,out_img), "TypeError")
-  expect_error(crop(55, 10, 10,out_img), "TypeError")
-  expect_error(crop(image, 10, 10,TRUE), "TypeError")
+  expect_error(crop(image, 9.5, 10,out_img), "TypeError: Only acceptable input is integer , like 1L, 8L.")
+  expect_error(crop(image, 10, 9.5,out_img), "TypeError: Only acceptable input is integer , like 1L, 8L.")
+  expect_error(crop(image, 9.5, 9.5,out_img), "TypeError: Only acceptable input is integer , like 1L, 8L.")
+  expect_error(crop(image, -9.9, -4.5,out_img), "ValueError: Desired height cannot be less than or equal to zero")
+  expect_error(crop(image, "10", TRUE,out_img), "TypeError: Only acceptable input is integer , like 1L, 8L.")
+  expect_error(crop(55, 10, 10,out_img), "TypeError: Only acceptable input should be a valid image path in string format.")
+  expect_error(crop(image, 10, 10,TRUE), "TypeError: Only acceptable input should be a valid path in string format.")
 })
 
 test_that("input array is correct shape",{

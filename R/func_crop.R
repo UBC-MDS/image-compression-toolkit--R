@@ -22,28 +22,35 @@
 #'
 #'
 #------------------------------------Library------------------------------------------#
-#library(numbers)
-#library(R.utils)
-#library(png)
-#library(OpenImageR)
-#library(assertthat)
 crop <- function(img_path, H, W, out_path){
 
   #---------------------------------Exception Handling--------------------------------#
   # Exception handling for input validation like Type error, invalid values ,         #
   # unrealistic desired dimension                                                     #
   #-----------------------------------------------------------------------------------#
-  if (assertthat::is.string(img_path)==FALSE || assertthat::is.string(out_path)==FALSE){
-    stop("TypeError")
+  if (assertthat::is.string(img_path)==FALSE){
+    stop("TypeError: Only acceptable input should be a valid image path in string format.")
   }
-  if (H <=0 || W <= 0 ){
-    stop("ValueError")
-    }
-  if (H >= dim(readImage(img_path))[1]+1 || W>=dim(readImage(img_path))[2]+1){
-    stop("ValueError")
+  if (assertthat::is.string(out_path)==FALSE){
+    stop("TypeError: Only acceptable input should be a valid path in string format.")
   }
-  if (is.integer(H)==FALSE || is.integer(W)==FALSE){
-    stop("TypeError")
+  if (H <=0){
+    stop("ValueError: Desired height cannot be less than or equal to zero")
+  }
+  if (W <= 0 ){
+    stop("ValueError: Desired width cannot be less than or equal to zero")
+  }
+  if (H >= dim(readImage(img_path))[1]+1){
+    stop("ValueError: Desired height cannot be more than original height")
+  }
+  if (W>=dim(readImage(img_path))[2]+1){
+    stop("ValueError: Desired width cannot be more than original width")
+  }
+  if (is.integer(H)==FALSE){
+    stop("TypeError: Only acceptable input is integer , like 1L, 8L.")
+  }
+  if (is.integer(W)==FALSE){
+    stop("TypeError: Only acceptable input is integer , like 1L, 8L.")
   }
 
   #-----------------------------------------------------------------------------------#
