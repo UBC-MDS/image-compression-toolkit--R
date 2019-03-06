@@ -1,7 +1,7 @@
 ---
 title: "imageCompressR Package Manifesto"
 author: "Sayanti Ghosh,Aditya Sharma,Alden Chen"
-date: "2019-03-02"
+date: "2019-03-05"
 output:
   rmarkdown::html_vignette:
     toc: true
